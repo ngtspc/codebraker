@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# Explanation/Description of Number class
 class Codebraker
   attr_reader :generated_number
   attr_accessor :entered_number
@@ -11,7 +8,6 @@ class Codebraker
   end
 
   def wrong_input_defence(entered_number)
-    p entered_number.to_s
     until entered_number.to_s.length == 4
       p 'Please double-check your number'
       entered_number = gets.chomp.to_i
@@ -22,8 +18,8 @@ class Codebraker
   def compare(entered_number)
     i = 0
     hiden_number = []
-    p converted_entered_number = entered_number.to_s.split('')
-    p converted_generated_number = @generated_number.to_s.split('')
+    converted_entered_number = entered_number.to_s.split('')
+    converted_generated_number = @generated_number.to_s.split('')
     converted_generated_number.each do |element|
       compare_numbers(element, i, hiden_number, converted_entered_number)
       i += 1
@@ -45,5 +41,4 @@ class Codebraker
     entered_number = wrong_input_defence(entered_number)
     compare(entered_number)
   end
-
 end
