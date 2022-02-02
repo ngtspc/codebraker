@@ -1,24 +1,25 @@
 require_relative 'codebraker'
-require_relative 'interface'
+require_relative 'cli'
 
 class Main
-  include Interface
   attr_accessor :current_attempts
 
-  def initialize(current_attempts = 0)
+  def initialize
     @codebraker = Codebraker.new
-    @current_attempts = current_attempts
   end
 
   def run
-    greeting
-    choose_attempts_number
+    CLI.greeting
+    current_attempts = CLI.choose_attempts_number
     current_attempts.times do
-      entered_number = enter_number
-      hiden_number = @codebraker.check(entered_number)
-      return if won_game(hiden_number)
-      counter
-      game_over(hiden_number)
+      entered_number = Codebraker.enter_number
+      hidden_number = @codebraker.check(entered_number)
+      CLI.decrease_attempts_counter
+      if CLI.won_game?(hidden_number)
+        break
+      else
+        CLI.game_over
+      end
     end
   end
 end
