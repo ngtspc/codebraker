@@ -16,11 +16,11 @@ class CLI
     end
   end
 
-  def self.game_over(current_attempts)
+  def self.game_over?(current_attempts)
     p 'Game over' if current_attempts.zero?
   end
 
-  def CLI.choose_attempts_number
+  def self.choose_attempts_number
     current_attempts = gets.chomp.to_i
     p "Ok. You have #{current_attempts} attempts. Show what you can do!"
     current_attempts

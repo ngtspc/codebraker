@@ -21,16 +21,15 @@ class Codebraker
   end
 
   def compare(entered_number)
-    hidden_number = []
     converted_entered_number = entered_number.to_s.split('')
     converted_generated_number = @generated_number.to_s.split('')
-    converted_generated_number.each_with_index do |element, id|
-      compare_numbers(element, id, hidden_number, converted_entered_number)
+    hidden_number = converted_generated_number.each_with_index.inject([]) do |hidden_number, (element, id)|
+      compare_numbers(id, element, hidden_number, converted_entered_number)
     end
     p hidden_number.join('')
   end
 
-  def compare_numbers(element, id, hidden_number, converted_entered_number)
+  def compare_numbers(id, element, hidden_number, converted_entered_number)
     if converted_entered_number[id] == element
       hidden_number.push('+')
     elsif converted_entered_number.include?(element)

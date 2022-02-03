@@ -15,13 +15,10 @@ class Main
     @current_attempts.times do
       entered_number = Codebraker.enter_number
       hidden_number = @codebraker.check(entered_number)
-      if CLI.won_game?(hidden_number)
-        break
-      else
-        CLI.game_over(current_attempts = @current_attempts)
-      end
-      @current_attempts = CLI.decrease_attempts_counter(current_attempts = @current_attempts)
+      break if CLI.won_game?(hidden_number)
+      @current_attempts = CLI.decrease_attempts_counter(@current_attempts)
     end
+    CLI.game_over?(@current_attempts)
   end
 end
 
