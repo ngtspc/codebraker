@@ -18,7 +18,7 @@ class Main
 
       CLI.show_attempts(current_attempt)
     end
-    CLI.game_over?
+    CLI.game_over
   end
 end
 

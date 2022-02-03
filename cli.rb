@@ -15,7 +15,7 @@ class CLI
     end
   end
 
-  def self.game_over?
+  def self.game_over
     p 'Game over'
   end
 
