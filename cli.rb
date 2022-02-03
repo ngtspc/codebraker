@@ -4,7 +4,7 @@ class CLI
     p 'How many attempts do you need to win the game?'
   end
 
-  def self.decrease_attempts_counter(current_attempt)
+  def self.show_attempts(current_attempt)
     p "You have #{current_attempt} attempt(s) left!"
     current_attempt
   end
