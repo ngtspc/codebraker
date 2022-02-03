@@ -12,14 +12,14 @@ class Main
   def run
     CLI.greeting
     @current_attempts = CLI.choose_attempts_number
-    @current_attempts.times do
+    (@current_attempts - 1).downto(0) do |current_attempt|
       entered_number = Codebraker.enter_number
       hidden_number = @codebraker.check(entered_number)
       break if CLI.won_game?(hidden_number)
 
-      @current_attempts = CLI.decrease_attempts_counter(@current_attempts)
+      CLI.decrease_attempts_counter(current_attempt)
     end
-    CLI.game_over?(@current_attempts)
+    CLI.game_over?
   end
 end
 

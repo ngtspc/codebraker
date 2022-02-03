@@ -4,9 +4,9 @@ class CLI
     p 'How many attempts do you need to win the game?'
   end
 
-  def self.decrease_attempts_counter(current_attempts)
-    p "You have #{current_attempts -= 1} attempt(s) left!"
-    current_attempts
+  def self.decrease_attempts_counter(current_attempt)
+    p "You have #{current_attempt} attempt(s) left!"
+    current_attempt
   end
 
   def self.won_game?(hidden_number)
@@ -15,8 +15,8 @@ class CLI
     end
   end
 
-  def self.game_over?(current_attempts)
-    p 'Game over' if current_attempts.zero?
+  def self.game_over?
+    p 'Game over'
   end
 
   def self.choose_attempts_number
