@@ -1,5 +1,4 @@
 class CLI
-
   def self.greeting
     p 'Welcome to our game, kid. I have thought of a number. Can you guess what the number is?'
     p 'How many attempts do you need to win the game?'
@@ -12,7 +11,7 @@ class CLI
 
   def self.won_game?(hidden_number)
     if hidden_number == '++++'
-      p 'Congrats! You won the game, kid!' 
+      p 'Congrats! You won the game, kid!'
     end
   end
 
