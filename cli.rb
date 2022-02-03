@@ -1,5 +1,4 @@
 class CLI
-  attr_accessor :current_attempts
 
   def self.greeting
     p 'Welcome to our game, kid. I have thought of a number. Can you guess what the number is?'

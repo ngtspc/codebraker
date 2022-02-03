@@ -41,7 +41,7 @@ class Codebraker
   end
 
   def check(entered_number)
-    p entered_number = wrong_input_defence(entered_number)
+    entered_number = wrong_input_defence(entered_number)
     compare(entered_number)
   end
 end
